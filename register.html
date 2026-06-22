@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="register-container">
+
+    <h2>Create Account</h2>
+
+    <form>
+
+        <input type="text"  id="name" placeholder="Full Name">
+
+        <input type="email" id="email" placeholder="Email">
+
+        <input type="password" id="password"  placeholder="Password">
+
+        <input type="password" placeholder="Confirm Password">
+        <div class="role-select">
+            <label><input type="radio" name="role" value="freelancer" checked> I'm a Freelancer</label>
+            <label><input type="radio" name="role" value="client"> I'm a Client</label>
+        </div>
+         
+       
+        <button type="button" onclick="registerUser()">Register</button>
+
+
+    </form>
+
+</div>
+
+        <script src="script.js"></script>
+
+
+</body>
+</html>
