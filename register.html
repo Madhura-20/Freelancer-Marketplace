@@ -2,23 +2,28 @@
 <html>
 <head>
     <title>Register</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
 </head>
-<body>
+<body class="register-page">
 
 <div class="register-container">
 
-    <h2>Create Account</h2>
+    <h2>Create Account 🚀</h2>
+
+<p class="register-text">
+Join Freelance Hub and start your journey today
+</p>
 
     <form>
 
-        <input type="text"  id="name" placeholder="Full Name">
+       <input type="text" id="name" placeholder="👤 Full Name">
 
-        <input type="email" id="email" placeholder="Email">
+<input type="email" id="email" placeholder="📧 Email Address">
 
-        <input type="password" id="password"  placeholder="Password">
+<input type="password" id="password" placeholder="🔒 Password">
 
-        <input type="password" placeholder="Confirm Password">
+<input type="password" placeholder="🔒 Confirm Password">
+
         <div class="role-select">
             <label><input type="radio" name="role" value="freelancer" checked> I'm a Freelancer</label>
             <label><input type="radio" name="role" value="client"> I'm a Client</label>
@@ -26,7 +31,11 @@
          
        
         <button type="button" onclick="registerUser()">Register</button>
-
+        
+        <p class="login-link">
+        Already have an account?
+        <a href="login.html">Login</a>
+        </p>
 
     </form>
 

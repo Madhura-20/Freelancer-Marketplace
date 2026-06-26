@@ -42,3 +42,12 @@ function loginUser() {
 
     }
 }
+
+let savedName = localStorage.getItem("name");
+
+if(document.getElementById("welcomeUser")){
+
+document.getElementById("welcomeUser").innerHTML =
+"Welcome, " + savedName + " 👋";
+
+}
