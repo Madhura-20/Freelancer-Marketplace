@@ -27,25 +27,30 @@
 
 <img src="f1.jpg" class="profile-pic">
 
-<input type="text" placeholder="Full Name">
+<input type="text"id="profileName" placeholder="Full Name">
 
-<input type="email" placeholder="Email">
+<input type="email" id="profileEmail" placeholder="Email">
 
-<input type="tel" placeholder="Phone Number">
+<input type="tel" id="profilePhone" placeholder="Phone Number">
 
-<input type="text" placeholder="Skills (HTML, CSS, JavaScript)">
+<input type="text" id="profileSkills" placeholder="Skills (HTML, CSS, JavaScript)">
 
-<input type="text" placeholder="Experience (e.g. 2 Years)">
+<input type="text" id="profileExperience" placeholder="Experience (e.g. 2 Years)">
 
-<input type="text" placeholder="Hourly Rate (₹/hour)">
+<input type="text" id="profileRate" placeholder="Hourly Rate (₹/hour)">
 
-<input type="text" placeholder="Location">
+<input type="text" id="profileLocation" placeholder="Location">
 
-<textarea rows="5" placeholder="About Me"></textarea>
+<textarea rows="5" id="profileAbout" placeholder="About Me"></textarea>
 
-<button>Save Profile</button>
+<button type="button" onclick="saveProfile()">
+Save Profile
+</button>
 
 </div>
+
+<script src="script.js"></script>
+
 
 </body>
 </html>
