@@ -131,22 +131,20 @@ ul li a:hover{
     outline:none;
     margin-bottom:20px;
 }
+
 button{
-    background:white;
-    color:royalblue;
-    padding:15px 35px;
-    border:none;
-    border-radius:35px;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.4s;
+    background: blue;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover{
-    transform:translateY(-5px);
+    background: darkblue;
 }
-
 .hero{
     animation: fadeIn 2s ;
 }
@@ -1554,3 +1552,30 @@ font-weight:bold;
     margin-bottom:15px;
 }
 
+.payment-btn{
+
+width:180px;
+
+height:45px;
+
+font-weight:bold;
+
+}
+
+.status-badge{
+
+display:inline-block;
+
+width:120px;
+
+padding:8px;
+
+font-size:15px;
+
+font-weight:bold;
+
+text-align:center;
+
+border-radius:20px;
+
+}

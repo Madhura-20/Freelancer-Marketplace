@@ -14,6 +14,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="freelancers.html">Freelancers</a></li>
+        <li><a href="payment.html">Milestone Payments</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
@@ -51,15 +52,15 @@ We're here to help you with your projects and freelancing journey
 
 <h2>Contact Us</h2>
 
-<form>
+<form onsubmit="return sendMessage()">
 
-<input type="text" placeholder="Your Name">
+<input type="text" id="contactName" placeholder="Your Name">
 
-<input type="email" placeholder="Your Email">
+<input type="email" id="contactEmail" placeholder="Your Email">
 
-<textarea rows="5" placeholder="Your Message"></textarea>
+<textarea rows="5" id="contactMessage" placeholder="Your Message"></textarea>
 
-<button>Send Message</button>
+<button type="submit">Send Message</button>
 
 </form>
 
@@ -73,6 +74,8 @@ We're here to help you with your projects and freelancing journey
 <p>© 2026 All Rights Reserved</p>
 
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

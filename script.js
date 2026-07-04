@@ -158,7 +158,9 @@ localStorage.setItem("profileRate", rate);
 localStorage.setItem("profileLocation", location);
 localStorage.setItem("profileAbout", about);
 
-alert("Profile Saved Successfully!");
+let toast = new bootstrap.Toast(document.getElementById("profileToast"));
+
+toast.show();
 }
 
 function loadProfile(){
@@ -207,6 +209,153 @@ function displayWelcome() {
         }
     }
 
+let bids = localStorage.getItem("totalBids") || 0;
+
+let activeBids = document.getElementById("activeBids");
+
+if(activeBids){
+    activeBids.innerHTML = bids;
+}
+
+}
+
+
+/* Bid Function */
+
+function submitBid(button){
+
+    let card = button.closest(".project-card");
+
+    let status = card.querySelector(".status");
+
+    status.innerHTML = "Status: Bid Submitted";
+
+    button.innerHTML = "Bid Submitted";
+
+    button.disabled = true;
+
+    button.style.backgroundColor = "gray";
+
+    let totalBids = Number(localStorage.getItem("totalBids")) || 0;
+
+    totalBids++;
+
+    localStorage.setItem("totalBids", totalBids);
+
+    let modal = new bootstrap.Modal(document.getElementById("bidModal"));
+
+    modal.show();
+
+}
+
+/* Contact Form */
+
+function sendMessage(){
+
+let name = document.getElementById("contactName").value.trim();
+
+let email = document.getElementById("contactEmail").value.trim();
+
+let message = document.getElementById("contactMessage").value.trim();
+
+if(name === "" || email === "" || message === ""){
+
+alert("Please fill all the fields.");
+
+return false;
+
+}
+
+if(!email.includes("@") || !email.includes(".")){
+
+alert("Please enter a valid email.");
+
+return false;
+
+}
+
+localStorage.setItem("contactName", name);
+
+localStorage.setItem("contactEmail", email);
+
+localStorage.setItem("contactMessage", message);
+
+alert("Message Sent Successfully!");
+
+document.getElementById("contactName").value = "";
+
+document.getElementById("contactEmail").value = "";
+
+document.getElementById("contactMessage").value = "";
+
+return false;
+
+}
+
+/* Search Projects */
+
+function searchProjects(){
+
+let input = document.getElementById("projectSearch");
+
+if(input == null){
+    return;
+}
+
+let filter = input.value.toUpperCase();
+
+let projects = document.getElementsByClassName("search-item");
+
+for(let i = 0; i < projects.length; i++){
+
+    let text = projects[i].innerText.toUpperCase();
+
+    if(text.indexOf(filter) > -1){
+
+        projects[i].style.display = "block";
+
+    }
+
+    else{
+
+        projects[i].style.display = "none";
+
+    }
+
+}
+
+}
+
+/* Filter Projects */
+
+function filterProjects(category){
+
+let projects = document.getElementsByClassName("search-item");
+
+for(let i=0; i<projects.length; i++){
+
+let text = projects[i].innerText.toLowerCase();
+
+if(category == "all"){
+
+projects[i].style.display = "block";
+
+}
+
+else if(text.includes(category)){
+
+projects[i].style.display = "block";
+
+}
+
+else{
+
+projects[i].style.display = "none";
+
+}
+
+}
+
 }
 
 
@@ -232,5 +381,51 @@ alert("Logged out successfully.");
 window.location.href = "index.html";
 
 }
+
+}
+
+/* Hire Freelancer */
+
+function hireFreelancer(button){
+
+button.innerHTML = "Hired";
+
+button.disabled = true;
+
+button.style.background = "gray";
+
+let hired = Number(localStorage.getItem("totalHired")) || 0;
+
+hired++;
+
+localStorage.setItem("totalHired", hired);
+
+let modal = new bootstrap.Modal(document.getElementById("hireModal"));
+
+modal.show();
+
+}
+
+/* Release Payment */
+
+function releasePayment(button){
+
+button.innerHTML = "Payment Released";
+
+button.disabled = true;
+
+button.classList.remove("btn-success");
+
+button.classList.add("btn-secondary");
+
+let payments = Number(localStorage.getItem("totalPayments")) || 0;
+
+payments++;
+
+localStorage.setItem("totalPayments", payments);
+
+let modal = new bootstrap.Modal(document.getElementById("paymentModal"));
+
+modal.show();
 
 }
